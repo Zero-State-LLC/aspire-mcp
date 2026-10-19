@@ -4,9 +4,9 @@ This is a private, proprietary repository of Zero State LLC.
 
 ## Reporting a vulnerability
 
-Do not open a public issue. Report privately to the repository owner (Danny) via a
-GitHub private security advisory on this repo, or directly through your existing
-Zero State contact channel.
+Do not open a public issue. Report privately to the repository owner via a
+GitHub private security advisory on this repo:
+https://github.com/Zero-State-LLC/aspire-mcp/security/advisories/new
 
 ## Ground rules
 

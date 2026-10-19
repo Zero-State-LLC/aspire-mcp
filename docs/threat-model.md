@@ -5,7 +5,7 @@
 ## 1. System overview
 - TODO: diagram (agent host, MCP server, tools, client systems, vault, audit store, egress gateway)
 - TODO: trust boundaries (model <-> agent runtime <-> MCP server <-> client systems)
-- Assets: borrower personal data, documents, email, credentials, audit log integrity, tool allowlist/config
+- Assets: personal data, documents, email, credentials, audit log integrity, tool allowlist/config
 
 ## 2. Assumptions
 - Everything runs on-prem; no cloud models; one controlled egress gateway.
