@@ -6,7 +6,7 @@ proprietary to Zero State LLC (see `LICENSE`).
 ## Purpose
 
 The MCP server is the only path by which a locally hosted AI can reach client
-systems (loan software, document store, email). It must run fully inside the
+systems (line-of-business software, document store, email). It must run fully inside the
 client's building, with narrow tools, least privilege and strong audit.
 
 ## Scope
@@ -20,8 +20,7 @@ This is a starting point, not a finished product. It is not deployed anywhere.
 
 ## On-prem MCP requirements (checklist)
 
-Sources: Danny's on-prem MCP requirements email (2026-10-14 PT) and the MCP
-sections of the Aspire engagement spec (technical requirements only).
+Sources: the project's on-prem MCP requirements (technical requirements only).
 
 **Network / locality**
 - [ ] Fully local: no outside network access, no cloud LLMs, no telemetry
@@ -29,7 +28,7 @@ sections of the Aspire engagement spec (technical requirements only).
 - [ ] Server reachable only from the agent host (local socket or private network), never the open network
 
 **Tools**
-- [ ] Few, narrow, task-specific tools (e.g. "get loan file status", "fetch document X")
+- [ ] Few, narrow, task-specific tools (e.g. "get record status", "fetch document X")
 - [ ] No raw SQL, no shell, no general file access
 - [ ] Read-only by default; any write action gated behind human approval
 - [ ] Config file allowlist of tools; nothing outside it is exposed (skeleton: `ASPIRE_MCP_ALLOWED_TOOLS`)
@@ -42,7 +41,7 @@ sections of the Aspire engagement spec (technical requirements only).
 - [ ] Credentials stored in the client's own vault, never in prompts or code
 
 **Data protection**
-- [ ] Borrower personal data masked/redacted before it reaches the model
+- [ ] Personal data masked/redacted before it reaches the model
 - [ ] Unmasked only where a tool strictly needs it
 - [ ] Output gate (leak check) on every tool result; on failure return a block record instead
 
@@ -121,5 +120,5 @@ docs/             threat model, injection defenses, red-team plan (owner: @arshi
 
 1. Branch from `main` (`feat/...`, `fix/...`, `docs/...`).
 2. Open a PR to `main`. CI (lint + test) must pass. Direct pushes and force-pushes to `main` are blocked.
-3. Danny reviews and merges.
+3. The code owner (@scrimshawlife-ctrl) reviews and merges.
 4. No secrets or client data in any commit. Synthetic data only.
