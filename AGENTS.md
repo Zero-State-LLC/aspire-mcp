@@ -10,6 +10,8 @@ Change the requirements or design doc first for anything non-trivial, then the c
 
 ## Commands
 
+For source navigation, load `.agents/skills/graft/SKILL.md`. Use its pinned, telemetry-disabled commands with this repo's root explicitly. Indexing is local development tooling, never permission to run project code or access production.
+
 | Task | Command |
 |---|---|
 | Install | `pip install -e ".[dev]"` |
