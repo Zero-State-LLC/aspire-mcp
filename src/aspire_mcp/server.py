@@ -11,7 +11,7 @@ import logging
 import sys
 from datetime import UTC, datetime
 
-from mcp.server.fastmcp import FastMCP
+from mcp.server.mcpserver import MCPServer
 
 from aspire_mcp.config import Settings
 
@@ -40,9 +40,9 @@ def echo_impl(text: str, settings: Settings) -> str:
     return f"echo: {cleaned}"
 
 
-def build_server(settings: Settings | None = None) -> FastMCP:
+def build_server(settings: Settings | None = None) -> MCPServer:
     settings = settings or Settings.from_env()
-    mcp = FastMCP(settings.server_name)
+    mcp = MCPServer(settings.server_name)
 
     if settings.kill_switch:
         log.warning("Kill switch is on; no tools registered.")
