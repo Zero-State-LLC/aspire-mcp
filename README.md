@@ -89,7 +89,11 @@ Sources: the project's on-prem MCP requirements (technical requirements only).
 
 ## Stack
 
-Python 3.11+ with the official MCP Python SDK (`mcp`, FastMCP), stdio transport.
+Python 3.11+ with the official MCP Python SDK (`mcp>=1.2,<2`, FastMCP), stdio transport.
+The current server uses the SDK v1 `mcp.server.fastmcp` API. SDK v2 removes that
+import, so installing v2 fails during collection before any tool runs (issue #28).
+The upper bound is a compatibility constraint, not a production lockfile or
+security clearance. A v2 migration requires a separate implementation and review.
 
 ## How to run
 
